@@ -467,7 +467,7 @@ export function HeroSection() {
             className="relative z-30 max-w-[1100px] mx-auto px-6 pb-10"
           >
             <div
-              className="w-full rounded-3xl p-8 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-6"
+              className="w-full rounded-3xl p-8 md:p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
               style={{
                 background: "rgba(15, 15, 15, 0.92)",
                 backdropFilter: "blur(30px)",

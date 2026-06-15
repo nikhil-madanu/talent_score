@@ -177,7 +177,7 @@ export function ResultsSection() {
       return {
         closed: { x: 0, y: 0, rotate: 0, scale: 0.2, zIndex: baseZIndex, opacity: 0 },
         open: {
-          x: offset * 20,
+          x: offset * 10,
           y: -100 - (index * 60),
           rotate: offset * 3,
           scale: 1,
@@ -191,7 +191,7 @@ export function ResultsSection() {
         },
         hover: {
           y: -110 - (index * 60),
-          x: offset * 20,
+          x: offset * 10,
           scale: 1.02,
           rotate: offset * 3,
           zIndex: baseZIndex,

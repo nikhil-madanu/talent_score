@@ -398,7 +398,7 @@ export function FeaturesSection() {
                                      <span className="text-[10px] font-medium text-white/90">{insight.title}</span>
                                      <span className="text-[7px] text-[#10B981] bg-[#10B981]/10 px-1 py-0.5 rounded font-bold tracking-wider uppercase shrink-0">{insight.score}</span>
                                    </div>
-                                   <p className="text-[9px] text-white/50 leading-snug whitespace-normal break-words">"{insight.text}"</p>
+                                   <p className="text-[9px] text-white/50 leading-snug whitespace-normal break-words">&quot;{insight.text}&quot;</p>
                                 </div>
                              </motion.div>
                           ))}

@@ -48,6 +48,7 @@ const NODES     = generateNodes(10);       // reduced from 12
 export function CinematicBackground() {
   const [mounted, setMounted] = useState(false);
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
 

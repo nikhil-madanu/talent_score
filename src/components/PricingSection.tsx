@@ -32,6 +32,7 @@ export function PricingSection() {
       size: Math.random() * 16 + 10, // Between 10px and 26px font size
       rotate: Math.random() * 360
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(newParticles);
   }, []);
 
@@ -305,7 +306,7 @@ export function PricingSection() {
   );
 }
 
-function PricingCard({ plan }: { plan: any }) {
+function PricingCard({ plan }: { plan: PlanDef }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -315,6 +316,9 @@ function PricingCard({ plan }: { plan: any }) {
   
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], plan?.popular ? ["8deg", "-8deg"] : ["4deg", "-4deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], plan?.popular ? ["-8deg", "8deg"] : ["-4deg", "4deg"]);
+  const backgroundSpotlight = useTransform(
+    () => `radial-gradient(400px circle at ${x.get() * 100 + 50}% ${y.get() * 100 + 50}%, ${plan.popular ? 'rgba(255,85,0,0.08)' : 'rgba(255,255,255,0.03)'}, transparent 50%)`
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -421,9 +425,7 @@ function PricingCard({ plan }: { plan: any }) {
       <motion.div 
         className="absolute inset-0 pointer-events-none rounded-[28px] opacity-0 hover:opacity-100 transition-opacity duration-500 z-0"
         style={{
-          background: useTransform(
-            () => `radial-gradient(400px circle at ${x.get() * 100 + 50}% ${y.get() * 100 + 50}%, ${plan.popular ? 'rgba(255,85,0,0.08)' : 'rgba(255,255,255,0.03)'}, transparent 50%)`
-          )
+          background: backgroundSpotlight
         }}
       />
 

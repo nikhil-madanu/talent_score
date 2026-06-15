@@ -30,7 +30,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   );
 }
 
-function TiltMetricCard({ metric, index }: { metric: any, index: number }) {
+function TiltMetricCard({ metric, index }: { metric: { num: number, suffix: string, label: string, description: string, gradientFrom: string, gradientTo: string, glowColor: string, topHighlight: string }, index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -138,6 +138,7 @@ export function ResultsSection() {
       maxOpacity: Math.random() * 0.6 + 0.4,
       size: Math.random() * 4 + 1
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(newParticles);
 
     return () => window.removeEventListener("resize", checkSize);
@@ -444,7 +445,7 @@ export function ResultsSection() {
 
                 {/* Decorative Background Quote */}
                 <div className="absolute -top-6 -left-2 text-[140px] text-white/[0.02] font-serif leading-none select-none z-0 pointer-events-none transition-transform duration-1000 group-hover:scale-105">
-                  "
+                  &quot;
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full">
@@ -460,7 +461,7 @@ export function ResultsSection() {
                   
                   {/* Quote Body */}
                   <p className="text-[14px] leading-relaxed text-[#D1D1D1] font-normal flex-1 mb-6 transition-colors duration-700 group-hover:text-white">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </p>
                   
                   {/* Footer: User Info & Logo */}

@@ -5,7 +5,7 @@ import { ArrowRight, Zap } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export function CtaSection() {
-  const [particles, setParticles] = useState<Array<{id: number, left: string, top: string, duration: number, delay: number, size: number, color: string}>>([]);
+  const [particles, setParticles] = useState<Array<{id: number, left: string, top: string, duration: number, delay: number, size: number, color: string, maxOpacity: number}>>([]);
 
   useEffect(() => {
     const newParticles = Array.from({ length: 120 }).map((_, i) => ({
@@ -15,8 +15,10 @@ export function CtaSection() {
       duration: Math.random() * 15 + 10,
       delay: Math.random() * 5,
       size: Math.random() * 4 + 1.5,
-      color: Math.random() > 0.8 ? '#FF5500' : '#FFFFFF'
+      color: Math.random() > 0.8 ? '#FF5500' : '#FFFFFF',
+      maxOpacity: Math.random() * 0.7 + 0.3
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(newParticles);
   }, []);
 
@@ -42,7 +44,7 @@ export function CtaSection() {
             }}
             animate={{
               y: [0, -250],
-              opacity: [0, Math.random() * 0.7 + 0.3, 0],
+              opacity: [0, p.maxOpacity, 0],
             }}
             transition={{
               duration: p.duration,
@@ -94,7 +96,7 @@ export function CtaSection() {
             </span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white/60 to-white/30 font-light">
-              shouldn't be a 
+              shouldn&apos;t be a 
             </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500 font-black italic">
               {" "}guess.
@@ -108,7 +110,7 @@ export function CtaSection() {
             }}
             className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light tracking-wide"
           >
-            Join the world's best teams in replacing human intuition with <span className="text-white font-medium">AI-driven hiring intelligence</span>. 
+            Join the world&apos;s best teams in replacing human intuition with <span className="text-white font-medium">AI-driven hiring intelligence</span>. 
             Start building your dream team today.
           </motion.p>
           

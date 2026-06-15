@@ -298,7 +298,7 @@ export function ProblemSection() {
             <span className="text-[#FF6B35]">you more than you think.</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[17px] md:text-[19px] text-[#A1A1AA] leading-relaxed max-w-[700px] mx-auto font-medium">
-            It's not just salary. It's lost productivity, damaged client relationships, <br className="hidden md:block" /> wasted onboarding time, and another hiring cycle.
+            It&apos;s not just salary. It&apos;s lost productivity, damaged client relationships, <br className="hidden md:block" /> wasted onboarding time, and another hiring cycle.
           </motion.p>
         </motion.div>
 
@@ -454,7 +454,7 @@ export function ProblemSection() {
           >
             <p className="text-[#AAA] text-[15px] leading-relaxed max-w-[320px] mx-auto lg:mx-0">
               Companies that hire wrong lose an average of{" "}
-              <span className="text-[#FF6B35] font-semibold">30%</span> of that employee's annual salary.
+              <span className="text-[#FF6B35] font-semibold">30%</span> of that employee&apos;s annual salary.
             </p>
           </motion.div>
 

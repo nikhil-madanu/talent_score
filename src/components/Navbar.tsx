@@ -82,6 +82,7 @@ export function Navbar() {
   const [mounted, setMounted]                 = useState(false);
 
   // ── Mount flag for entrance animation ──
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true); }, []);
 
   // ── Refs ──
